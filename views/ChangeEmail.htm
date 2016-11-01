@@ -1,0 +1,19 @@
+﻿ <div data-dojo-type="dojox.mobile.RoundRect">
+    <span>You change the EMail you use to access account.</span>
+</div>
+
+<div data-dojo-type="dojox.mobile.RoundRect">
+    <span>New EMail</span>
+    <input id="inputNewEMail" data-dojo-type="dojox.mobile.TextBox" class="TextBox-Large" type="text" value=""></input>
+    <span>Confirm New EMail</span>
+    <input id="inputConfirmNewEMail" data-dojo-type="dojox.mobile.TextBox" class="TextBox-Large" type="text" value=""></input>
+</div>
+
+<ul data-dojo-type="dojox.mobile.RoundRectList">
+  <li 
+    id="listItemChangeEmail" 
+    data-dojo-type="dojox.mobile.ListItem" 
+    data-dojo-props="rightText: 'Change EMail', moveTo: 'viewWeeklyFoodSummaries'" 
+    onclick="app.actions.changeEMail();" >
+  </li>
+</ul>

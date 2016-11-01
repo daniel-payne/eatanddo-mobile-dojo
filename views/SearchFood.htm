@@ -1,0 +1,27 @@
+<div data-dojo-type="dojox.mobile.RoundRect" style="height: Auto;" >
+   <input id="InputSearchTerm"   data-dojo-type="dojox.mobile.SearchBox" class="TextBox-Large" type="search"   value="" placeHolder="Search"  data-dojo-props="incremental: false" onkeydown=" app.actionOnEnterKey(this,event, app.actions.showSearchResults); " ></input>
+   <input id="InputMatchAnyWord" data-dojo-type="dojox.mobile.CheckBox"                        type="checkbox" >Match Any Word</input>
+ 
+   <div style="float: right; display: inline;">
+ 
+     <button data-dojo-type="dojox.mobile.Button"  onclick="app.actions.showSearchResults();" >Search</button>
+  
+   </div>
+    
+</div> 
+     
+<div data-dojo-type="dojox.mobile.RoundRectCategory" data-dojo-props=" label: 'Search Results' " ></div>
+        
+<ul id="listSearchMatches" data-dojo-type="dojox.mobile.RoundRectList" style="min-height: 60px; display: none;" >
+
+ <div data-dojo-type="dojox.mobile.ListItem" data-dojo-props="rightText: 'Add', moveTo: '#' " >Pork Pie</div>
+ <div data-dojo-type="dojox.mobile.ListItem" data-dojo-props="rightText: 'Add', moveTo: '#' " >Pork Pie Mini</div>
+
+</ul>  
+
+<div class="Div-Action-Buttons">
+  <div id="buttonMoreSearchMatches" label="More Lunch Items" data-dojo-type="dojox.mobile.ToolBarButton" onclick="app.actions.showMoreSearchMatches()" style="display: none;" ></div>
+</div>
+        
+  
+            

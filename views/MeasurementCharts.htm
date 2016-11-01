@@ -1,0 +1,32 @@
+﻿<div class="Round-Rect-Info" data-dojo-type="dojox.mobile.RoundRect" shadow="false" >
+
+  <span>Weight</span>
+			
+  <div dojoType="dojox.charting.widget.Chart" id="chartWeight" style="width: 100%; height: 180px;" > 
+				
+		<div class="axis" name="axisWeightY" vertical="true" fixUpper="major" includeZero="false" ></div>
+				
+    <div class="plot" name="plotWeight" type="Lines" tension= "3"  markers="true" vAxis="axisWeightY" ></div>
+				
+    <div class="series" name="seriesWeight" plot="plotWeight" data="87.4, 87.4, 88.1, 87.3, 88.0, 88.1, 87.8"></div>
+
+	</div>
+
+</div> 
+
+<div class="Round-Rect-Info" data-dojo-type="dojox.mobile.RoundRect" shadow="false" >
+
+  <span>BloodPressure</span>
+			
+  <div dojoType="dojox.charting.widget.Chart" id="chartBloodPressure" style="width: 100%; height: 180px;" > 
+				
+		<div class="axis" name="axisBloodPressureY" vertical="true" fixUpper="major" includeZero="false" ></div>
+				
+    <div class="plot" name="plotBloodPressure" type="Lines" tension= "3"  markers="true" vAxis="axisBloodPressureY" ></div>
+				
+    <div class="series" name="seriesBloodPressureSys" plot="plotBloodPressure" data="131, 136, 125, 126, 131, 136, 132"></div>
+    <div class="series" name="seriesBloodPressureDis" plot="plotBloodPressure" data=" 92,  96,  87,  85,  89,  93,  88"></div>
+
+	</div>
+
+</div> 

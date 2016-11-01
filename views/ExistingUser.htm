@@ -1,0 +1,15 @@
+﻿<div data-dojo-type="dojox.mobile.RoundRect">
+    <span>EMail</span>
+    <input id="inputUserEmail" data-dojo-type="dojox.mobile.TextBox" class="TextBox-Large" type="text" value="daniel.payne@keldan.co.uk" onkeydown=" app.focusOnEnterKey(this,event, 'inputPassword' ); " ></input>
+    <span>Password</span>
+    <input id="inputPassword" data-dojo-type="dojox.mobile.TextBox" class="TextBox-Large" type="password" value="aaa" onkeydown=" app.actionOnEnterKey(this,event, app.actions.connectExistingUser, 'viewWeeklyFoodSummaries'); " ></input>
+</div>
+
+<ul data-dojo-type="dojox.mobile.RoundRectList">
+  <li 
+    id="listItemWelcomwConnect" 
+    data-dojo-type="dojox.mobile.ListItem" 
+    data-dojo-props="rightText: 'Login', moveTo: '#'" 
+    onclick="app.actions.connectExistingUser();" >
+  </li>
+</ul>

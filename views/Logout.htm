@@ -1,0 +1,35 @@
+﻿<div id ="divAnonymousUserLogout">
+
+  <div data-dojo-type="dojox.mobile.RoundRect">
+
+    <div>
+        <span>EMail Address</span>
+        <input id="inputRegisterUserEmail" data-dojo-type="dojox.mobile.TextBox" class="TextBox-Large" type="email" value=""></input>
+        <span>Confirm EMail Address</span>
+        <input id="inputRegisterUserEmailConfirm" data-dojo-type="dojox.mobile.TextBox" class="TextBox-Large" type="email" value=""></input>
+        <br />
+        <span>Password</span>
+        <input id="inputRegisterPassword" data-dojo-type="dojox.mobile.TextBox" class="TextBox-Large" type="password" value=""></input>
+        <span>Confirm Password</span>
+        <input id="inputRegisterPasswordConfirm" data-dojo-type="dojox.mobile.TextBox" class="TextBox-Large" type="password" value=""></input>
+    </div>
+
+  </div>
+
+  <ul data-dojo-type="dojox.mobile.RoundRectList">
+    <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="rightText:'Save E-Mail & Password', moveTo:'viewExistingUser'"  onclick="app.actions.register()" ></li>
+  </ul>
+
+</div>
+
+<div id ="divExistingUserLogout">
+
+  <div data-dojo-type="dojox.mobile.RoundRect">
+      <span>You data has allready been saved.</span>
+  </div>
+
+  <ul data-dojo-type="dojox.mobile.RoundRectList">
+    <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="rightText: 'Logout', moveTo: 'viewExistingUser'" onclick="app.actions.disconnect()" ></li>
+  </ul>
+
+</div>

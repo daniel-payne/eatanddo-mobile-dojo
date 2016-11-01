@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Untitled</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- REMOVE FOR PRODUCTION -->
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma"        content="no-cache">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />  
+        
+
+    <script>      var dojoConfig = {    
+        isDebug:     true, 
+        parseOnLoad: false, 
+        async:       true,  
+        packages: [        
+          {name:  "ertoc",   location: location.href.replace(/\/[^/]+$/, '') + "/../scripts"} 
+        ]
+      };
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js"></script> 
+ 
+    <script type="text/javascript">
+
+ 
+       
+    require([
+      "ertoc/corsOverride" ,
+      "dojo/request/registry",
+      "dojo/dom" 
+    ], function( corsOverride, request, dom ) {
+
+        corsOverride(/cors-test.appspot.com/);
+        corsOverride(/test.eatanddo.com/);
+        corsOverride(/ws002.keldan.co.uk/);
+        
+        request('http://cors-test.appspot.com/test', { method: 'GET', handleAs: 'json', preventCache: true, headers: { 'X-Requested-With':null, Accept: 'application/json', Origin: 'myAppUrl' } }).then(function (response) {
+
+             dom.byId('divTest01').innerHTML =  response; 
+        }, function (err) {
+
+             dom.byId('divTest01').innerHTML =  err;   
+        });
+
+        request('http://test.eatanddo.com/mobile/REST/ping', { method: 'GET', handleAs: 'text', preventCache: true, headers: { 'X-Requested-With':null, Accept: 'application/json', Origin: 'myAppUrl' } }).then(function (response) {
+
+             dom.byId('divTest02').innerHTML =  response; 
+        }, function (err) { 
+         
+             dom.byId('divTest02').innerHTML =  err;  
+        });
+
+        request('https://test.eatanddo.com/mobile/REST/ping', { method: 'GET', handleAs: 'text', preventCache: true, headers: { 'X-Requested-With':null, Accept: 'application/json', Origin: 'myAppUrl' } }).then(function (response) {
+
+             dom.byId('divTest03').innerHTML =  response; 
+        }, function (err) { 
+         
+             dom.byId('divTest03').innerHTML =  err;  
+        });
+
+       request('http://ws002.keldan.co.uk/mobile/REST/ping', { method: 'GET', handleAs: 'json', preventCache: true, headers: { 'X-Requested-With':null, Accept: 'application/json, */*', Origin: 'myAppUrl' } }).then(function (response) {
+
+             dom.byId('divTest04').innerHTML =  response; 
+        }, function (err) { 
+         
+             dom.byId('divTest04').innerHTML =  err;  
+        });
+
+       dom.byId('divSplash').innerHTML = 'Test Completed';
+    });
+
+    </script>
+</head>
+                                      
+<body > 
+
+   <div id="divSplash" style="text-align: center;" >Test Started</div>  
+   
+   <div id="divOverride" style="text-align: center;" >Override</div>  
+
+   <div id="divTest01" style="text-align: center;" >Test 01</div>  
+   <div id="divTest02" style="text-align: center;" >Test 02</div>  
+   <div id="divTest03" style="text-align: center;" >Test 03</div>  
+   <div id="divTest04" style="text-align: center;" >Test 04</div>
+</body>
+
+
+</html>
+
+ 

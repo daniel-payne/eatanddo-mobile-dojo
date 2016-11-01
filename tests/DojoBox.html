@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Untitled</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- REMOVE FOR PRODUCTION -->
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma"        content="no-cache">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />  
+        
+    <script>      var dojoConfig = {    
+      isDebug:     true, 
+      parseOnLoad: true, 
+      async:       true,               mblAlwaysHideAddressBar: true,       mblThemeFiles: [        'base',        'FixedSplitter'      ], 
+      };
+    </script> 
+  <!--
+  <link                          href="http://ajax.googleapis.com/ajax/libs/dojo/1.8.3//dojox/mobile/themes/iphone/iphone.css" rel="stylesheet"/>
+  <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js" ></script>
+
+  <link                          href="http://localhost/dojo/dojo-1.8.3/dojox/mobile/themes/iphone/iphone.css" rel="stylesheet"/>
+  <script type="text/javascript"  src="http://localhost/dojo/dojo-1.8.3/dojo/dojo.js" ></script>
+  -->
+
+  <link                          href="http://localhost/dojo/dojo-1.8.3/dojox/mobile/themes/iphone/iphone.css" rel="stylesheet"/>
+  <script type="text/javascript"  src="http://localhost/dojo/dojo-1.8.3/dojo/dojo.js" ></script>
+
+
+    <script type="text/javascript">
+
+      require([
+         
+      "dojo/ready",
+
+			"dojox/mobile/parser",
+      "dojo/dom-style", 
+      "dijit/registry",
+  
+    	"dojox/mobile",
+			"dojox/mobile/compat",
+
+			"dojox/mobile/FixedSplitter",
+			"dojox/mobile/ScrollableView",
+			"dojox/mobile/Container",     
+      "dojox/mobile/RoundRectList",
+      "dojox/mobile/ProgressIndicator",
+      "dojox/mobile/ValuePicker",
+      "dojox/mobile/ValuePickerSlot",
+      "dojox/mobile/ValuePickerTimePicker",
+      "dojox/mobile/Button",
+      "dojox/mobile/TextBox",
+      "dojox/mobile/SearchBox",
+      "dojox/mobile/CheckBox",
+      "dojox/mobile/TabBar",
+      "dojox/mobile/TabBarButton",
+      "dojox/mobile/SimpleDialog",
+      "dojox/mobile/ListItem",
+    //"dojox/mobile/ProgressIndicator",
+      
+//      "dojox/charting/widget/Chart",
+//      "dojox/charting/axis2d/Default",
+//    //"dojox/charting/plot2d/Areas",
+//      "dojox/charting/plot2d/Lines",
+//      "dojox/charting/plot2d/Columns",
+//    //"dojox/charting/plot2d/Bars",
+//    //"dojox/charting/plot2d/Candlesticks",
+//      "dojox/charting/plot2d/StackedColumns",
+
+      "dojo/domReady!" 
+      ], function () {
+      
+
+         
+      });
+    </script>
+</head>
+
+<body> 
+
+	<div id="divLayoutRoot" data-dojo-type="dojox.mobile.FixedSplitter" data-dojo-props='orientation:"H", screenSizeAware:true' " >
+
+		<div id="divMenu" data-dojo-type="dojox.mobile.Container" style="width:300px; border-right:0px solid gray; " >
+ 		
+      <div id="viewMenu" data-dojo-type="dojox.mobile.ScrollableView"  >
+ 				 
+          <h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', label:'Eat And Do' "></h1>
+
+          <ul data-dojo-type="dojox.mobile.EdgeToEdgeList" data-dojo-props='transition:"slide", stateful:true' >
+					
+          <li class="mblEdgeToEdgeCategory">Welcome</li>
+          <li data-dojo-type="dojox.mobile.ListItem" class="ShowOnDisconnect"    data-dojo-props="moveTo:'viewExistingUser',                               " >Existing User</li>
+          <li data-dojo-type="dojox.mobile.ListItem" class="ShowOnDisconnect"    data-dojo-props="moveTo:'viewanonymousUser',                               " >anonymous User</li>
+
+				</ul>
+
+			</div> 
+		</div>
+
+		<div id="divApplication" data-dojo-type="dojox.mobile.Container">
+                
+ 
+	    <div id="viewExistingUser"               data-dojo-type="dojox.mobile.ScrollableView" >
+        <h1 id="headingExistingUser"                  data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',       moveTo:'viewMenu',                       label: 'Login'                    ">  </h1>
+        <div data-dojo-type="dojox.mobile.RoundRect">
+            <span>EMail</span>
+            <input id="InputUserEmail" data-dojo-type="dojox.mobile.TextBox" class="TextBox-Large" type="text" value="someone@somewhere.com"></input>
+            <span>Password</span>
+            <input id="InputPassword" data-dojo-type="dojox.mobile.TextBox" class="TextBox-Large" type="password" value="" ></input>
+        </div>
+
+        <ul data-dojo-type="dojox.mobile.RoundRectList">
+          <li id="listItemWelcomwConnect" data-dojo-type="dojox.mobile.ListItem" data-dojo-props="rightText: 'Login', moveTo: '#'"  ></li>
+        </ul>
+      </div>
+
+	    <div id="viewanonymousUser"               data-dojo-type="dojox.mobile.ScrollableView" >
+        <h1 id="headinganonymousUser"                  data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',       moveTo:'viewMenu',                       label: 'Start'                    ">  </h1>
+        <div data-dojo-type="dojox.mobile.RoundRect">
+            <span>You can just start using eat and do, you will only be required to enter your user name and password when you logout.</span>
+        </div>
+
+        <ul data-dojo-type="dojox.mobile.RoundRectList">
+          <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="rightText: 'Just Start Using', moveTo: '#'"  ></li>
+        </ul>
+      </div>
+
+  
+   </div>
+
+  </div>
+
+
+
+
+
+
+</body>
+</html>
+
+ 

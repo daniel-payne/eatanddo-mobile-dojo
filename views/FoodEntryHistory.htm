@@ -1,0 +1,34 @@
+
+
+<div id="categoryHistoryEntries" data-dojo-type="dojox.mobile.RoundRectCategory" data-dojo-props="label: 'Lunch Items for the last 5 days'" ></div>
+
+<ul id="listHistoryEntries" data-dojo-type="dojox.mobile.RoundRectList">
+
+  <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="label: '2 Slices Wholemeal Bred', rightText: 'Add', moveTo:'viewFoodDiary' "></li> 
+  <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="label: '200g Baked Beand',        rightText: 'Add', moveTo:'viewFoodDiary' "></li>
+  <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="label: '3 Fried Eggs',            rightText: 'Add', moveTo:'viewFoodDiary' "></li>
+  <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="label: '80g Wholemeal toast',     rightText: 'Add', moveTo:'viewFoodDiary' "></li>
+  <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="label: '3 Biscuits Weeterbix',    rightText: 'Add', moveTo:'viewFoodDiary' "></li>
+  <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="label: '200ml Skimed Milk',       rightText: 'Add', moveTo:'viewFoodDiary' "></li>
+
+</ul>
+
+<!--
+<ul data-dojo-type="dojox.mobile.TabBar" barType="standardTab" fixed="bottom">
+  <li data-dojo-type="dojox.mobile.TabBarButton"                     >Breakf.</li>
+  <li data-dojo-type="dojox.mobile.TabBarButton" selected="selected" >Lunch</li>
+  <li data-dojo-type="dojox.mobile.TabBarButton"                     >Dinner</li>
+  <li data-dojo-type="dojox.mobile.TabBarButton"                     >Snacks</li>
+</ul>
+-->
+
+<div class="Div-Action-Buttons">
+  <div data-dojo-type="dojox.mobile.ToolBarButton" data-dojo-props="label:'Breakfast'" onclick="app.actions.showHistoryResults('Breakfast')" style=" margin: 0px !important;"></div>
+  <div data-dojo-type="dojox.mobile.ToolBarButton" data-dojo-props="label:'Lunch'"     onclick="app.actions.showHistoryResults('Lunch'    )" style=" margin: 0px !important;"></div>
+  <div data-dojo-type="dojox.mobile.ToolBarButton" data-dojo-props="label:'Dinner'"    onclick="app.actions.showHistoryResults('Dinner'   )" style=" margin: 0px !important;"></div>
+  <div data-dojo-type="dojox.mobile.ToolBarButton" data-dojo-props="label:'Snacks'"    onclick="app.actions.showHistoryResults('Snacks'   )" style=" margin: 0px !important;"></div>
+</div>   
+
+<div class="Div-Action-Buttons">
+  <div id="buttonMoreHistoryItems" data-dojo-type="dojox.mobile.ToolBarButton" data-dojo-props="label:'More Items'" onclick="app.actions.showMoreHistoryEntries()"></div>
+</div>

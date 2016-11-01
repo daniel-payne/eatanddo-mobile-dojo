@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+
+
+	<title>Eat And Do Mobile</title>
+
+  <script>    var dojoConfig = {    
+      isDebug:     true, 
+      parseOnLoad: true, 
+      async:       true,               mblAlwaysHideAddressBar: true,       mblThemeFiles: [        'base',        'FixedSplitter'      ], 
+      packages: [        
+        {name:  "ertoc",   location: location.href.replace(/\/[^\/]+$/, '') + "/../scripts"} 
+      ]
+    };
+  </script>
+
+  <!--
+  <link                          href="http://ajax.googleapis.com/ajax/libs/dojo/1.8.3//dojox/mobile/themes/iphone/iphone.css" rel="stylesheet"/>
+  <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js" ></script>
+
+  <link                          href="http://localhost/dojo/dojo-1.8.3/dojox/mobile/themes/iphone/iphone.css" rel="stylesheet"/>
+  <script type="text/javascript"  src="http://localhost/dojo/dojo-1.8.3/dojo/dojo.js" ></script>
+  -->
+
+  <link                          href="http://localhost/dojo/dojo-1.8.3/dojox/mobile/themes/iphone/iphone.css" rel="stylesheet"/>
+  <script type="text/javascript"  src="http://localhost/dojo/dojo-1.8.3/dojo/dojo.js" ></script>
+
+  <style>
+    @import "../styles/app.css";
+  </style>
+	
+  <script type="text/javascript">
+      define("ertoc/ertocTheme", [
+        "dojox/charting/Theme", 
+        "dojox/charting/themes/common"
+      ], function (theme, themes) {
+        //places it for use as 
+        //theme="dojox.charting.themes.ertocTheme"
+        themes.ertocTheme = new dojox.charting.Theme({         
+ 		      chart: {
+			      fill:	          "#C5C5DA"   
+		      },         
+          plotarea: { fill: "#C5C5DA" }
+        });
+
+        return themes.ertocTheme;
+      });
+  </script>
+
+
+	<script type="text/javascript">
+		require([
+
+      "ertoc/app",
+      "dojo/ready",
+
+      "ertoc/action",
+      "ertoc/data",
+      "ertoc/display", 
+
+			"dojox/mobile/parser",
+      "dojo/dom-style", 
+      "dijit/registry",
+      "dojo/dom",
+  
+    	"dojox/mobile",
+			"dojox/mobile/compat",
+
+			"dojox/mobile/FixedSplitter",
+			"dojox/mobile/ScrollableView",
+			"dojox/mobile/Container",     
+      "dojox/mobile/RoundRectList",
+      "dojox/mobile/ProgressIndicator",
+      "dojox/mobile/ValuePicker",
+      "dojox/mobile/ValuePickerSlot",
+      "dojox/mobile/ValuePickerTimePicker",
+      "dojox/mobile/Button",
+      "dojox/mobile/TextBox",
+      "dojox/mobile/SearchBox",
+      "dojox/mobile/CheckBox",
+      "dojox/mobile/TabBar",
+      "dojox/mobile/TabBarButton",
+      "dojox/mobile/SimpleDialog",
+      "dojox/mobile/ListItem",
+    //"dojox/mobile/ProgressIndicator",
+      
+      "dojox/charting/widget/Chart",
+      "dojox/charting/axis2d/Default",
+    //"dojox/charting/plot2d/Areas",
+      "dojox/charting/plot2d/Lines",
+      "dojox/charting/plot2d/Columns",
+    //"dojox/charting/plot2d/Bars",
+    //"dojox/charting/plot2d/Candlesticks",
+      "dojox/charting/plot2d/StackedColumns",
+
+      "dojo/domReady!" 
+
+    ], function (app, ready, action, data, display, parser, style, registry, dom) {
+ 
+      app.initilize();  
+
+      ready( function(){
+        
+        //app.actions.hideChangeTime();
+      });
+    });
+	</script>
+
+	<style>
+	html, body{
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+	}                                                                                                        
+
+	</style>
+</head>
+
+<body >    
+
+  
+
+
+
+</body>
+
+</html>  
+
+
+  

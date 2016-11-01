@@ -1,0 +1,49 @@
+﻿<div data-dojo-type="dojox.mobile.RoundRectCategory" data-dojo-props="label: 'Wednesday, 15 January'" ></div>
+
+<ul data-dojo-type="dojox.mobile.RoundRectList">
+  <li id="listItemUpdateMeasurementTime" data-dojo-type="dojox.mobile.ListItem" data-dojo-props="variableHeight: true" style="height: auto;" >
+    <div> 
+      <label class="mblListItemLabel" >Time</label>
+      <br />
+      <label id="labelUpdateMeasurementTime" class="mblListItemLabel" style="font-size: xx-large !important;">15:32</label>
+      <div  id="timePickerUpdateMeasurement"  data-dojo-type="dojox.mobile.ValuePickerTimePicker" is24h="true"  style="margin-left: 0px; "></div>
+      <button id="buttonUpdateMeasurementChangeTime" data-dojo-type="dojox.mobile.Button" style="float: right; clear: none; margin-top: 0px;" onclick="app.display.showChangeTime();">Change</button>
+    </div>
+  </li>
+</ul>  
+
+
+<ul data-dojo-type="dojox.mobile.RoundRectList">
+  <li id="listItemUpdateMeasurementEntryValue" data-dojo-type="dojox.mobile.ListItem" data-dojo-props="" style="height: 180px;">
+
+    <label id="labelUpdateMeasurementEntryName" class="mblListItemLabel">Blood Preassure</label>
+    <div data-dojo-type="dojox.mobile.ValuePicker" style="margin-left: 0px;">
+     
+     <div id="valuePickerUpdateMeasurementQuantitySYS" data-dojo-type="dojox.mobile.ValuePickerSlot" labelfrom="80" labelto="200"                value="120" style="width: 100px; display: none;"></div>
+     <div id="valuePickerUpdateMeasurementQuantityDIS" data-dojo-type="dojox.mobile.ValuePickerSlot" labelfrom="40" labelto="150"                value='80'  style="width: 100px; display: none;"></div>
+                          
+     <div id="valuePickerUpdateMeasurementQuantityKG"  data-dojo-type="dojox.mobile.ValuePickerSlot" labelfrom="50" labelto="250"                value="120" style="width: 100px;"></div>
+     <div id="valuePickerUpdateMeasurementQuantityG"   data-dojo-type="dojox.mobile.ValuePickerSlot" labels='.0,.1,.2,.3,.4,.5,.6,.7,.8,.9',     value='.0'  style="width:  60px;"></div>
+                                                                                                                                            
+     <div id="valuePickerUpdateMeasurementQuantityLBS" data-dojo-type="dojox.mobile.ValuePickerSlot" labelfrom="50" labelto="500"                value="150" style="width: 100px; display: none;"></div>
+                                                                                                                                            
+     <div id="valuePickerUpdateMeasurementQuantityST"  data-dojo-type="dojox.mobile.ValuePickerSlot" labelfrom="1"  labelto="50"                 value="10"  style="width: 100px; display: none;"></div>
+     <div id="valuePickerUpdateMeasurementQuantityLB"  data-dojo-type="dojox.mobile.ValuePickerSlot" labels=" , 1,2,3,4,5,6,7,8,910,11,12,13,14" value=""    style="width:  60px; display: none;"></div>
+                                     
+     <div id="valuePickerUpdateMeasurementQuantityHR"  data-dojo-type="dojox.mobile.ValuePickerSlot" labels=",1,2,3,4,5,6"                       value="1"   style="width: 100px; display: none;"></div>
+     <div id="valuePickerUpdateMeasurementQuantityQT"  data-dojo-type="dojox.mobile.ValuePickerSlot" labels=",:15,:30,:45"                       value=""    style="width:  60px; display: none;"></div>
+                          
+     <div id="valuePickerUpdateMeasurementQuantityMIN" data-dojo-type="dojox.mobile.ValuePickerSlot" labelfrom="1"  labelto="120"                value="30"  style="width: 100px; display: none;"></div>
+     
+     <div id="valuePickerUpdateMeasurementUnit"        data-dojo-type="dojox.mobile.ValuePickerSlot" labels='Kg, Lbs, St Lb',                    value='Kg'  style="width: 70px;" ></div>   
+
+    </div>
+  </li>
+  <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props=" rightText:'Update', moveTo:'viewDailyMeasurementEntries' " onclick="app.actions.updateSelectedMeasurementEntry();" ></li>
+</ul>
+
+<ul data-dojo-type="dojox.mobile.RoundRectList">
+  <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="rightText:'Remove From Diary', moveTo:'viewDailyMeasurementEntries' "  onclick="app.actions.deleteSelectedMeasurementEntry();" ></li>
+</ul>
+
+

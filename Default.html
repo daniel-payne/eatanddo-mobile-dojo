@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+
+
+	<title>Eat And Do Mobile</title>
+
+  <script>    var dojoConfig = {    
+      isDebug:     true, 
+      parseOnLoad: true, 
+      async:       true,               mblAlwaysHideAddressBar: true,       mblThemeFiles: [        'base',        'FixedSplitter'      ], 
+      packages: [        
+        {name:  "ertoc",   location: location.href.replace(/\/[^\/]+$/, '') + "/scripts"} 
+      ]
+    };                                                        
+  </script>
+
+  <!--
+
+  <link                          href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojox/mobile/themes/iphone/iphone.css" rel="stylesheet"/>
+  <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js" ></script>
+ 
+  <link                          href="http://localhost/dojo/dojo-1.9.1/dojox/mobile/themes/iphone/iphone.css" rel="stylesheet"/>
+  <script type="text/javascript"  src="http://localhost/dojo/dojo-1.9.1/dojo/dojo.js" ></script>
+
+  <link                          href="./themes/custom/custom.css" rel="stylesheet"/>
+  -->
+
+  <link                          href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojox/mobile/themes/iphone/iphone.css" rel="stylesheet"/>
+  <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js" ></script>
+
+  <style>
+    @import "./styles/app.css";
+  </style>
+	
+  <script type="text/javascript">
+      define("ertoc/ertocTheme", [
+        "dojox/charting/Theme", 
+        "dojox/charting/themes/common"
+      ], function (theme, themes) {
+        //places it for use as 
+        //theme="dojox.charting.themes.ertocTheme"
+        themes.ertocTheme = new dojox.charting.Theme({         
+ 		      chart: {
+			      fill:	          "#C5C5DA"   
+		      },         
+          plotarea: { fill: "#C5C5DA" }
+        });
+
+        return themes.ertocTheme;
+      });
+  </script>
+
+
+	<script type="text/javascript">
+		require([
+
+
+      "ertoc/app",
+      "ertoc/action",
+      "ertoc/data",
+      "ertoc/display", 
+
+      "dojo/ready",
+			"dojox/mobile/parser",
+      "dojo/dom-style", 
+      "dijit/registry",
+  
+    	"dojox/mobile",
+			"dojox/mobile/compat",
+			"dojox/mobile/FixedSplitter",
+			"dojox/mobile/ScrollableView",
+			"dojox/mobile/Container",     
+      "dojox/mobile/RoundRectList",
+      "dojox/mobile/ProgressIndicator",
+      "dojox/mobile/ValuePicker",
+      "dojox/mobile/ValuePickerSlot",
+      "dojox/mobile/ValuePickerTimePicker",
+      "dojox/mobile/Button",
+      "dojox/mobile/TextBox",
+      "dojox/mobile/SearchBox",
+      "dojox/mobile/CheckBox",
+      "dojox/mobile/TabBar",
+      "dojox/mobile/TabBarButton",
+      "dojox/mobile/SimpleDialog",
+      "dojox/mobile/ListItem",
+      "dojox/mobile/IconMenu",
+    //"dojox/mobile/ProgressIndicator",
+/*      
+      "dojox/charting/widget/Chart",
+      "dojox/charting/axis2d/Default",
+    //"dojox/charting/plot2d/Areas",
+      "dojox/charting/plot2d/Lines",
+      "dojox/charting/plot2d/Columns",
+    //"dojox/charting/plot2d/Bars",
+    //"dojox/charting/plot2d/Candlesticks",
+      "dojox/charting/plot2d/StackedColumns",
+*/
+      "dojo/domReady!" 
+
+    ], function (app, action, data, display, ready, parser, style, registry) {
+ 
+      app.initilize();  
+
+      ready( function(){
+
+       
+      
+        app.loadForms();
+      });
+    });
+	</script>
+
+	<style>
+	html, body{
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+	}                                                                                                        
+
+	</style>
+</head>
+
+<body >
+
+  <div id="divSplashScreen" style="position: absolute; height: 100%; width: 100%;  display: block; z-index: 99; background-color: #C5CCD3;" >
+     <img src="./Images/Loading.gif" alt="Acessing Server" style="float: left; margin: 10px;  "/> 
+     <p>Loading Eat And Do</p>
+  </div>
+
+  <div style="width: 100%; z-index: 99; position: absolute;">
+     <img id="imgLoading" src="./Images/Loading.gif" alt="loading" style="float: right; margin: 10px;  display: none;"/> 
+  </div>
+
+
+
+
+
+	<div id="divLayoutRoot" data-dojo-type="dojox.mobile.FixedSplitter" data-dojo-props='orientation:"H", screenSizeAware:true' " >
+
+		<div id="divMenu" data-dojo-type="dojox.mobile.Container" style="width:300px; border-right:0px solid gray; " >
+ 		
+      <div id="viewMenu" data-dojo-type="dojox.mobile.ScrollableView"  >
+ 				 
+          <h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', label:'Eat And Do' "></h1>
+
+          <img id="imgSplash" src="./Images/ManAtTable.png"/> 
+
+          <ul data-dojo-type="dojox.mobile.EdgeToEdgeList" data-dojo-props='transition:"slide", stateful:true' >
+					
+          <li class="mblEdgeToEdgeCategory">Welcome</li>
+          <li data-dojo-type="dojox.mobile.ListItem" class="ShowOnDisconnect"                 data-dojo-props="moveTo:'viewExistingUser',                                   icon: './Images/ExistingUser.png'                " >Existing User</li>
+          <li data-dojo-type="dojox.mobile.ListItem" class="ShowOnDisconnect"                 data-dojo-props="moveTo:'viewAnonymousUser',                                  icon: './Images/AnonymousUser.png'               " >Anonymous User</li>
+          <li data-dojo-type="dojox.mobile.ListItem" class="ShowOnDisconnect"                 data-dojo-props="moveTo:'viewResetPassword',                                  icon: './Images/ExistingUser.png'                " >Forgotten Password</li>
+          <li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'viewLogout',                                         icon: './Images/Logout.png'                      " >Logout</li>
+                                                                                                                                                                                                                     
+					<li class="mblEdgeToEdgeCategory ShowOnConnect"  >Diary</li>                                                                                                                                               
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'viewDailyFoodEntries',                               icon: './Images/FoodDiary.png'                   " >Food Diary</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'viewDailyMeasurementEntries',                        icon: './Images/MeasurementDiary.png'            " >Measurement Diary</li>
+					                                                                                                                                                                  
+          <li class="mblEdgeToEdgeCategory ShowOnConnect"  >Add Food Entry</li>                                                                                                                                               
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'#', onClick: app.actions.activateBreakfastItem,      icon: './Images/Breakfast.png'                   " >Breakfast</li>
+          <li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'#', onClick: app.actions.activateLunchItem,          icon: './Images/Lunch.png'                       " >Lunch</li>
+			  	<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'#', onClick: app.actions.activateDinnerItem,         icon: './Images/Dinner.png'                      " >Dinner</li>
+			  	<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'#', onClick: app.actions.activateSnacksItem,         icon: './Images/Snacks.png'                      " >Snacks</li>
+	                                                                                                                                                                                                                                            
+          <li class="mblEdgeToEdgeCategory ShowOnConnect"  >Add Measurement Entry</li>                                                                                                                                                              
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'#', onClick: app.actions.activateWeightItem,         icon: './Images/Weight.png'                      " >Weight</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'#', onClick: app.actions.activateBloodPressureItem,  icon: './Images/BloodPressure.png'               " >Blood Pressure</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'#', onClick: app.actions.activateExerciseItem,       icon: './Images/Exercise.png'                    " >Exercise</li>
+                                                                                                                                                                                                                     
+					<li class="mblEdgeToEdgeCategory ShowOnConnect"  >Weekly Summaries</li>                                                                                                                                               
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'viewWeeklyFoodSummaries',                            icon: './Images/FoodDiary.png'                   " >Nutrition Summary</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'viewWeeklyMeasurementSummaries',                     icon: './Images/MeasurementDiary.png'            " >Weight &amp; BP Summary</li>
+          <!--                                                                                                                                                                  
+					<li class="mblEdgeToEdgeCategory ShowOnConnect" >Charts</li>                                                                                                                                                         
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'viewFoodCharts',                                     icon: './Images/FoodCharts.png'                  " >Food</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect"                    data-dojo-props="moveTo:'viewMeasurementCharts',                              icon: './Images/MeasurementCharts.png'           " >Measurements</li>
+          -->                                                                                                                                                                                                        
+					<li class="mblEdgeToEdgeCategory ShowOnConnect HideOnAnonymous" >Details</li>                                                                                                                                           
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect HideOnAnonymous"    data-dojo-props="moveTo:'viewChangeEMail',                                    icon: './Images/ChangeEMail.png'                 " >E-Mail</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect HideOnAnonymous"    data-dojo-props="moveTo:'viewChangePassword',                                 icon: './Images/ChangePassword.png'              " >Change Password</li>
+					<!--
+          <li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect HideOnAnonymous"    data-dojo-props="moveTo:'viewPreferences',                                    icon: './Images/Preferences.png'                 " >Preferences</li>
+          -->
+          <!--                                                            
+					<li class="mblEdgeToEdgeCategory ShowOnConnect"  >Diary Activities</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect" data-dojo-props="moveTo:'viewNewFoodEntrySource'         ">New Food Options</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect" data-dojo-props="moveTo:'viewNewMeasurementEntryOptions'  ">New Measurement Options</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect" data-dojo-props="moveTo:'viewFoodEntryHistory'            ">Food Entry History</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect" data-dojo-props="moveTo:'viewNewFoodEntry'                ">New Food Entry</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect" data-dojo-props="moveTo:'viewUpdateFoodEntry'             ">Update Food Entry</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect" data-dojo-props="moveTo:'viewNewMeasurementEntry'         ">New Measurement Entry</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect" data-dojo-props="moveTo:'viewUpdateMeasurementEntry'      ">Update Measurement Entry</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect" data-dojo-props="moveTo:'viewSearchMatches'               ">Search Matches</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect" data-dojo-props="moveTo:'viewServingDetails'              ">Serving Details</li>
+					<li data-dojo-type="dojox.mobile.ListItem" class="ShowOnConnect" data-dojo-props="moveTo:'viewNewUserDetails'              ">New User</li>
+          -->           
+          <li id="listItemDataLogHeading" class="mblEdgeToEdgeCategory" >Debugging</li>           
+          <li id="listItemDataLogMenu"    data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo:'viewDataLog'" >Data Log</li>
+
+				</ul>
+
+        <div id="divServerInfo" class="Div-Status">Version Information</div>    
+
+			</div> 
+		</div>
+
+		<div id="divApplication" data-dojo-type="dojox.mobile.Container">
+     
+     <div id="menuPopup" style=" right: 0px; top: 0px; margin-top: 30px; margin-right: 8px; z-index: 99; position: absolute; display: none; " > 
+       <ul data-dojo-type="dojox/mobile/IconMenu" style="width:90px; height:220px; "  data-dojo-props="cols:1" >
+            <li data-dojo-type="dojox/mobile/IconMenuItem" data-dojo-props="label:'Menu',                icon:'./Images/Menu.inverted.png',             moveTo:'viewMenu',                       transition:'fade'   " onclick="app.display.hidePopupMenu()"></li>
+            <li data-dojo-type="dojox/mobile/IconMenuItem" data-dojo-props="label:'Food Diary',          icon:'./Images/FoodDiary.inverted.png',        moveTo:'viewDailyFoodEntries',           transition:'fade'   " onclick="app.display.hidePopupMenu()"></li>
+            <li data-dojo-type="dojox/mobile/IconMenuItem" data-dojo-props="label:'Measurement Diary',   icon:'./Images/MeasurementDiary.inverted.png', moveTo:'viewDailyMeasurementEntries',    transition:'fade'   " onclick="app.display.hidePopupMenu()"></li>
+  <!--          
+            <li data-dojo-type="dojox/mobile/IconMenuItem" data-dojo-props="label:'Add Breakfast',  icon:'./Images/Breakfast.inverted.png'        moveTo:'#', onClick: app.actions.activateBreakfastItem,       transition:'fade'   " onclick="app.display.showPopupMenu()"></li>
+            <li data-dojo-type="dojox/mobile/IconMenuItem" data-dojo-props="label:'Add Dinner',     icon:'./Images/Lunch.inverted.png',           moveTo:'#', onClick: app.actions.activateLunchItem,           transition:'fade'   " onclick="app.display.showPopupMenu()"></li>
+            <li data-dojo-type="dojox/mobile/IconMenuItem" data-dojo-props="label:'Add Lunch',      icon:'./Images/Dinner.inverted.png'           moveTo:'#', onClick: app.actions.activateDinnerItem,          transition:'fade'   " onclick="app.display.showPopupMenu()"></li>
+            <li data-dojo-type="dojox/mobile/IconMenuItem" data-dojo-props="label:'Add Snacks',     icon:'./Images/Snacks.inverted.png'           moveTo:'#', onClick: app.actions.activateSnacksItem,          transition:'fade'   " onclick="app.display.showPopupMenu()"></li>
+            <li data-dojo-type="dojox/mobile/IconMenuItem" data-dojo-props="label:'Add Weight',     icon:'./Images/Weight.inverted.png'           moveTo:'#', onClick: app.actions.activateWeightItem,          transition:'fade'   " onclick="app.display.showPopupMenu()"></li>
+            <li data-dojo-type="dojox/mobile/IconMenuItem" data-dojo-props="label:'Add BP',         icon:'./Images/BloodPressure.inverted.png'    moveTo:'#', onClick: app.actions.activateBloodPressureItem,   transition:'fade'   " onclick="app.display.showPopupMenu()"></li>
+            <li data-dojo-type="dojox/mobile/IconMenuItem" data-dojo-props="label:'Add Exercise',   icon:'./Images/Exercise.inverted.png'         moveTo:'#', onClick: app.actions.activateExerciseItem,        transition:'fade'   " onclick="app.display.showPopupMenu()"></li>
+  -->      
+      </ul> 
+    </div>
+      
+      <!-- Dialog View -->          
+      <div id="viewInfo" data-dojo-type="dojox.mobile.ScrollableView" data-dojo-props="selected:'true'">
+        
+        <h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top'"></h1>
+      
+        <div id="DialogLoginError" data-dojo-type="dojox.mobile.SimpleDialog" style="display: none;">
+          <div class="mblSimpleDialogTitle">Login Error</div>
+          <div class="mblSimpleDialogText">Your EMail Address and <br /> Password did not match.</div>
+          <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton" style="width:100px;" onclick="app.hideDialog('DialogLoginError'); app.actions.retryConnect(); ">Try Again</button>
+        </div>      
+        
+        <div id="DialogServerMessage" data-dojo-type="dojox.mobile.SimpleDialog" style="display: none;">
+          <div class="mblSimpleDialogTitle">Message</div>
+          <div id="divServerMessage" class="mblSimpleDialogText"></div>
+          <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton" style="width:100px;" onclick="app.hideDialog('DialogServerMessage'); app.actions.retryConnect(); ">Close</button>
+        </div>      
+
+        <div id="DialogClientMessage" data-dojo-type="dojox.mobile.SimpleDialog" style="display: none;">
+          <div id="divClientTitle" class="mblSimpleDialogTitle">Message</div>
+          <div id="divClientMessage" class="mblSimpleDialogText"></div>
+          <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton" style="width:100px;" onclick="app.hideDialog('DialogClientMessage'); ">Close</button>
+        </div>      
+
+        <div id="DialogRegisterError" data-dojo-type="dojox.mobile.SimpleDialog" style="display: none;">
+          <div class="mblSimpleDialogTitle">Regestration Error</div>
+          <div id="divRegisterError" class="mblSimpleDialogText">The Conform User Name and Passwords must match.</div>
+          <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton" style="width:100px;" onclick="app.hideDialog('DialogRegisterError'); app.actions.retryRegister(); ">Try Again</button>
+        </div>      
+
+      </div>
+      <!-- Disconnected Views --> 
+	    <div id="viewExistingUser"               data-dojo-type="dojox.mobile.ScrollableView" ><h1 id="headingExistingUser"                                           data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Login'                    ">  </h1></div>
+	    <div id="viewAnonymousUser"              data-dojo-type="dojox.mobile.ScrollableView" ><h1 id="headinganonymousUser"                                          data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Start'                    ">  </h1></div>
+	    <div id="viewLogout"                     data-dojo-type="dojox.mobile.ScrollableView" ><h1 id="headingLogout"                                                 data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Logout'                   ">  </h1></div>
+	    <div id="viewResetPassword"              data-dojo-type="dojox.mobile.ScrollableView" ><h1 id="headingResetPassword"                                          data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'EMail Password'           ">  </h1></div>                                                                                                                                                
+      <!-- Diary Views -->                                                                                                                          
+      <div id="viewWeeklyFoodSummaries"        data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingWeeklyFoodSummaries"        class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Food Diary'               ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' " data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> <div id="buttonFoodNextWeek"                data-dojo-props="label:'Next Week'" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right; margin-left: 0px !important;" onclick="app.actions.showNextWeek()" ></div><div id="buttonFoodPriorWeek"               data-dojo-props="label:'Last Week'" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.showPriorWeek()"></div> </div></div>                                  
+      <div id="viewWeeklyMeasurementSummaries" data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingWeeklyMeasurementSummaries" class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Measurement Diary'        ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' " data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> <div id="buttonMeasurementNextWeek"         data-dojo-props="label:'Next Week'" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right; margin-left: 0px !important;" onclick="app.actions.showNextWeek()" ></div><div id="buttonMeasurementPriorWeek"        data-dojo-props="label:'Last Week'" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.showPriorWeek()"></div> </div></div>                          
+      <div id="viewDailyFoodEntries"           data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingDailyFoodEntries"           class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Summary',       moveTo:'viewWeeklyFoodSummaries',        label: 'Food Entries'             ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> <div id="buttonFoodTommorow"                data-dojo-props="label:'Tommorow'"  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right; margin-left: 0px !important;" onclick="app.actions.showNextDay()"  ></div><div id="buttonFoodYesterday"               data-dojo-props="label:'Yesterday'" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.showPriorDay()" ></div> </div></div>                                  
+      <div id="viewDailyMeasurementEntries"    data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingDailyMeasurementEntries"    class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Summary',       moveTo:'viewWeeklyMeasurementSummaries', label: 'Measurement Entries'      ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> <div id="buttonMeasurementTommorow"         data-dojo-props="label:'Tommorow'"  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right; margin-left: 0px !important;" onclick="app.actions.showNextDay()"  ></div><div id="buttonMeasurementYesterday"        data-dojo-props="label:'Yesterday'" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.showPriorDay()" ></div> </div></div>                                  
+      <!-- Action Views -->                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+      <div id="viewNewFoodEntryOptions"        data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingNewFoodEntryOptions"        class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Add Food Entry'           ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>      
+      <div id="viewNewMeasurementEntryOptions" data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingNewMeasurementEntryOptions" class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Add Measurement Entry'    ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>       
+      <!-- Process Views -->                                                                                                                                                                                                                                                                                                                                                                                                                                            
+      <div id="viewNewFoodEntrySource"         data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingNewFoodEntrySource"         class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Diary',         moveTo:'viewDailyFoodEntries',           label: 'Options'                  ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>
+      <div id="viewNewMeasurementEntryAmount"  data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingNewMeasurementEntryAmount"  class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Measurements',  moveTo:'viewNewMeasurementEntryOptions', label: 'New Measurement Entry'    ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>
+      <div id="viewUpdateFoodEntry"            data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingUpdateFoodEntry"            class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Diary',         moveTo:'viewDailyFoodEntries',           label: 'Update Food Entry'        ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>
+      <div id="viewUpdateMeasurementEntry"     data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingUpdateMeasurementEntry"     class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Diary',         moveTo:'viewDailyMeasurementEntries',    label: 'Update Measurement Entry' ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>                                                                                                                                                                                                                                 
+      <div id="viewFoodDetails"                data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingFoodDetails"                class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top',                                                                label: 'Nutrition'                ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> <div id="buttonHideNutrition"               data-dojo-props="label:'Back'"        data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.hideNutrition()" ></div> </div></div>
+      <div id="viewNewFoodEntryAmount"         data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingNewFoodEntryAmount"         class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Search',        moveTo:'viewSearchFood',                 label: 'Amount'                   ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> <div id="buttonShowNutrition"               data-dojo-props="label:'Nutrition'"   data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.showNutrition()" ></div> </div></div>
+      <div id="viewSearchFood"                 data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingSearchFood"                 class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Options',       moveTo:'viewNewFoodEntrySource',         label: 'Search'                   ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>      
+      <div id="viewFoodEntryHistory"           data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingFoodEntryHistory"           class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Options',       moveTo:'viewNewFoodEntrySource',         label: 'Food History'             ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>   
+      <!-- incomplete -->                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+      <div id="viewFoodCharts"                 data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingFoodCharts"                 class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Food Charts'              ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> <div id="buttonrefreshFoodChartsWeek"        data-dojo-props="label:'Week'"   data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.refreshCharts('FOOD', 'WEEK')" ></div><div id="buttonrefreshFoodChartsMonth"        data-dojo-props="label:'Month'"   data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.refreshCharts('FOOD', 'MONTH')" ></div><div id="buttonrefreshFoodChartsYear"         data-dojo-props="label:'Year'"   data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.refreshCharts('FOOD', 'YEAR')" ></div> </div></div>
+      <div id="viewMeasurementCharts"          data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingMeasurementCharts"          class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Measurement Charts'       ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> <div id="buttonrefreshMeasurementChartsWeek" data-dojo-props="label:'Week'"   data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.refreshCharts('MEAS', 'WEEK')" ></div><div id="buttonrefreshMeasurementChartsMonth" data-dojo-props="label:'Month'"   data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.refreshCharts('MEAS', 'MONTH')" ></div><div id="buttonrefreshMeasurementChartsYear"  data-dojo-props="label:'Year'"   data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.refreshCharts('MEAS', 'YEAR')" ></div> </div></div>
+      <div id="viewComparsionCharts"           data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingComparsionCharts"           class="Div-Hide-WhenSmall" data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Comparsions'              ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> <div id="buttonrefreshCompairChartsWeek"     data-dojo-props="label:'Week'"   data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.refreshCharts('COMP', 'WEEK')" ></div><div id="buttonrefreshCompairChartsMonth"     data-dojo-props="label:'Month'"   data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.refreshCharts('COMP', 'MONTH')" ></div><div id="buttonrefreshCompairChartsYear"      data-dojo-props="label:'Year'"   data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.actions.refreshCharts('COMP', 'YEAR')" ></div> </div></div>
+      <!-- incomplete -->                                                                                                                                                                                                                                                                                                                                                                                                                                              
+      <div id="viewChangeEMail"                data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingChangeEMail"                                           data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Change Email'             ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>
+      <div id="viewChangePassword"             data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingChangePassword"                                        data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Change Password'          ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>
+      <div id="viewPreferences"                data-dojo-type="dojox.mobile.ScrollableView" ><div id="headingPreferences"                                           data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu',          moveTo:'viewMenu',                       label: 'Preferences'              ">  <div class="Div-Hide-WhenLarge" data-dojo-props="icon: './Images/Hamburger.inverted.png' "  data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.showPopupMenu()"></div> </div></div>                                                                                                                                                                                                                                                                                                      
+
+
+      <!-- Debugging --> 
+      <div id="viewDataLog" data-dojo-type="dojox.mobile.ScrollableView" >     
+        <div data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed:'top', back:'Menu', moveTo:'viewMenu', label:'Data Log' ">
+          <div id="buttonDeleteLog" data-dojo-props="label:'Clear Log'" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="app.display.clearLog()" ></div>
+        </div>       
+        <ul id="listDataLog" data-dojo-type="dojox.mobile.RoundRectList"  >
+        </ul>
+        <button data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" onclick="window.app.data.checkVersion();">Test Connection</button>
+      </div>
+  
+   </div>
+
+  </div>
+
+
+
+</body>
+
+</html>  
+
+
+  

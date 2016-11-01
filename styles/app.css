@@ -1,0 +1,191 @@
+﻿/* ======================================================*/
+
+.Hidden
+{
+    display: none;
+}
+
+.Minor
+{
+    font-size: x-small    !important;
+    color:     #888D96  !important;
+}
+
+/* ======================================================*/
+
+.ListItem-Details 
+{
+    
+}
+
+/* ======================================================*/
+
+.TextBox-Large
+{
+    width:         100%    !important; 
+    font-size:     large   !important; 
+    height:        40px    !important; 
+    margin-bottom: 20px; 
+    margin-top:    10px; 
+}
+
+/* ======================================================*/
+
+.Div-Header-Buffer {
+   height:      8px !important; 
+}
+
+.Div-Info-Details {
+    padding-right: 60px
+}
+
+.Div-Info-Header-Small {
+   float:       right; 
+   width :      80px; 
+   text-align : right; 
+   font-size:   x-small; 
+   /*border-right:thin solid #dfcfdf;*/
+}
+
+.Div-Info-Header-Small-Wide {
+   float:       right; 
+   width :      100px; 
+   text-align : right; 
+   font-size:   x-small; 
+}
+
+.Div-Info-Header-Small-Up {
+   float:       right; 
+   width :      80px; 
+   text-align : right; 
+   font-size:   x-small; 
+   margin-top: -05px;
+   /*border-right:thin solid #dfcfdf;*/
+}
+
+.Div-Info-Header-Small-Down {
+   float:       right; 
+   width :      30px; 
+   text-align : left; 
+   font-size:   x-small; 
+   margin-top:  05px;
+   padding-left: 08px;
+   /*border-right:thin solid #dfcfdf;*/
+}
+
+.Div-Info-Data {
+   float:        right; 
+   width :       80px; 
+   text-align :  right; 
+   color:       #324f85 !important;
+   /*border-right:thin solid #dfcfdf;*/
+}
+
+.Div-Info-Data-light {
+   float:        right; 
+   width :       30px; 
+   text-align :  left; 
+   color:       #7088B5 !important;
+   padding-left:  08px;
+   /*border-right:thin solid #dfcfdf;*/
+}
+
+.Div-Info-Data-Wide {
+   float:         right; 
+   width :        100px; 
+   text-align :   right; 
+   color:        #324f85 !important;
+}
+
+.Div-Info-Title-Left {
+   float:       left; 
+   font-size:   small; 
+   color:       #324f85 !important;
+}
+
+.Div-Info-Value {
+   width :      70px; 
+   display:     inline;
+}
+
+.Div-Info-Unit {
+   width :      30px; 
+   font-size:   x-small  !important;
+   color:     #888D96  !important;
+   display:     inline-block;
+   text-align:  left;
+}
+
+.Div-Summary-Data {
+   float:        right; 
+   width :       80px; 
+   text-align :  right; 
+   font-size :   x-small; 
+   color:       #AEA7C7 !important;
+   /*border-right:thin solid #dfcfdf;*/
+}
+
+.Div-Summary-Data-light {
+   float:        right; 
+   width :       30px; 
+   text-align :  left; 
+   font-size :   x-small; 
+   color:       #AEA7C7 !important;
+   padding-left:  08px;
+   /*border-right:thin solid #dfcfdf;*/
+}
+
+.Div-Info-Data-Small-Screen { 
+   margin-right:  26px; 
+}
+
+.Div-Info-Data-Medium-Screen { 
+   margin-right:  72px; 
+}
+
+.Div-Info-Data-Large-Screen { 
+   margin-right:  72px; 
+}
+
+.Div-Header-Small-Screen { 
+   margin-right:  26px; 
+}
+
+.Div-Header-Medium-Screen { 
+   margin-right:  72px; 
+
+}
+
+.Div-Header-Large-Screen { 
+   margin-right:  72px; 
+
+}
+ 
+.Div-Action-Buttons {
+    float:         right;  
+    margin-right:  06px;
+    clear:         both;
+}
+
+
+.Div-Status {
+   float:        left; 
+   text-align :  left; 
+   font-size :   x-small; 
+   color:       #AEA7C7 !important;
+   padding:       06px;
+   /*border-right:thin solid #dfcfdf;*/
+}
+	
+
+/* ======================================================*/
+
+.Span-Info-Insert-Small {
+   font-size:   x-small   !important; 
+   color:       #324f85 !important;
+}
+
+
+
+
+     
